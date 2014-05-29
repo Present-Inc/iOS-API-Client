@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5505006B2A5D437D8200B3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CB1A9496D64AF6A039BD2E /* libPods.a */; };
+		7C1A033A1937760200491E02 /* PVideoSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A03391937760200491E02 /* PVideoSessionManager.m */; };
 		7CC36BCE193520DB00C63F11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC36BCD193520DB00C63F11 /* Foundation.framework */; };
 		7CC36BD8193520DB00C63F11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36BD6193520DB00C63F11 /* InfoPlist.strings */; };
 		7CC36BDA193520DB00C63F11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36BD9193520DB00C63F11 /* main.m */; };
@@ -75,6 +76,8 @@
 		0A7F0B3B28C149A299876C53 /* libPods-PresentAPIClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PresentAPIClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCAE88D60F048C6BD7B9AE7 /* Pods-PresentAPIClientTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PresentAPIClientTests.xcconfig"; path = "Pods/Pods-PresentAPIClientTests.xcconfig"; sourceTree = "<group>"; };
 		44CB1A9496D64AF6A039BD2E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1A03381937760200491E02 /* PVideoSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PVideoSessionManager.h; path = Controllers/PVideoSessionManager.h; sourceTree = "<group>"; };
+		7C1A03391937760200491E02 /* PVideoSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PVideoSessionManager.m; path = Controllers/PVideoSessionManager.m; sourceTree = "<group>"; };
 		7CC36BCA193520DB00C63F11 /* PresentAPIClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentAPIClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36BCD193520DB00C63F11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7CC36BCF193520DB00C63F11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -321,6 +324,8 @@
 		7CCCE57919352354006F3EFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C1A03381937760200491E02 /* PVideoSessionManager.h */,
+				7C1A03391937760200491E02 /* PVideoSessionManager.m */,
 				7CCCE61B1935263B006F3EFA /* PAPIManager.h */,
 				7CCCE61C1935263B006F3EFA /* PAPIManager.m */,
 				7CCCE61F1935263B006F3EFA /* PJSONResponseSerializer.h */,
@@ -827,6 +832,7 @@
 				7CC36BDA193520DB00C63F11 /* main.m in Sources */,
 				7CCCE62F19352E17006F3EFA /* PObject+Networking.m in Sources */,
 				7CF425C719366BFF008C1F74 /* PTwitterManager.m in Sources */,
+				7C1A033A1937760200491E02 /* PVideoSessionManager.m in Sources */,
 				7CCCE5E319352496006F3EFA /* PRelationship.m in Sources */,
 				7CCCE5C519352496006F3EFA /* PActivity.m in Sources */,
 				7CCCE5CD19352496006F3EFA /* PFriendship.m in Sources */,
