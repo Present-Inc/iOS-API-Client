@@ -44,14 +44,14 @@ static NSString *DestroyRoute = @"destroy";
 }
 
 + (PObjectResultBlock)objectSuccessBlockWithCompletionHandler:(PObjectResultBlock)completion {
-    return ^(NSDictionary *object) {
+    return ^(id object) {
         PResult *result = [MTLJSONAdapter modelOfClass:[[self class] resourceResultClass] fromJSONDictionary:object error:nil];
         
         // !!!: This is weird. Consider a relation data store.
         [[PUser currentUser] addSubjectiveRelationshipsForResult:result];
         
         if (completion) {
-            completion(result.object);
+            completion(result);
         }
     };
 }
@@ -59,13 +59,14 @@ static NSString *DestroyRoute = @"destroy";
 + (PCollectionResultsBlock)collectionSuccessBlockWithCompletionHandler:(PCollectionResultsBlock)completion {
     return ^(NSArray *results, NSInteger nextCursor) {
         NSMutableArray *collection = [NSMutableArray array];
+        
         for (NSDictionary *objectJSON in results) {
             PResult *model = [MTLJSONAdapter modelOfClass:[[self class] resourceResultClass] fromJSONDictionary:objectJSON error:nil];
             
             // !!!: This is weird. Consider a relation data store.
             [[PUser currentUser] addSubjectiveRelationshipsForResult:model];
             
-            [collection addObject:model.object];
+            [collection addObject:model];
         }
         
         if (completion) {

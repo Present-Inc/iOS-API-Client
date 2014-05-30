@@ -66,8 +66,12 @@
         return ((PFriendshipResult*)self).friendship;
     }else if ([self isMemberOfClass:[PLikeResult class]]) {
         return ((PLikeResult*)self).like;
+    }else if ([self isMemberOfClass:[PPlaceResult class]]) {
+        return ((PPlaceResult*)self).place;
     }else if ([self isMemberOfClass:[PUserResult class]]) {
         return ((PUserResult*)self).user;
+    }else if ([self isMemberOfClass:[PUserContextResult class]]) {
+        return ((PUserContextResult*)self).userContext;
     }else if ([self isMemberOfClass:[PVideoResult class]]) {
         return ((PVideoResult*)self).video;
     }

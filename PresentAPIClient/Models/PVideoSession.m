@@ -208,8 +208,6 @@ static NSInteger MaxRetryCount      = 3;
 }
 
 - (void)appendNextSegment {
-    //PLog(@"Segments count: %i\nIs live? %@", self.segments.count, self.video.isLive ? @"YES" : @"NO");
-    
     if (self.readyForAppend) {
         NSLog(@"Appending next segment");
         [self startAppendRequest];

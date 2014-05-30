@@ -9,6 +9,7 @@
 #import <Kiwi/Kiwi.h>
 #import "PObject+Networking.h"
 
+#import "PResult.h"
 #import "PVideo.h"
 #import "PUser.h"
 
@@ -58,11 +59,11 @@ describe(@"PObject+Networking", ^{
                     [responseResults removeAllObjects];
                 }
                 
-                for (id object in results) {
-                    [[object should] beMemberOfClass:[PVideo class]];
+                for (PResult *result in results) {
+                    [[[result class] should] beSubclassOfClass:[PResult class]];
+                    [responseResults addObject:result.object];
                 }
                 
-                [responseResults addObjectsFromArray:results];
                 cursor = nextCursor;
             };
             

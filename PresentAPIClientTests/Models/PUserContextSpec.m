@@ -50,10 +50,11 @@ describe(@"PUserContext", ^{
             currentUserContext = [PUserContext objectWithObjectId:@"789"];
             currentUserContext.userResult = userResultMock;
             currentUserContext.sessionToken = @"SliceMyPizza553!!@#";
-            [currentUserContext saveToDisk];
+            [PUserContext stub:@selector(currentContext) andReturn:currentUserContext];
         });
         
         afterAll(^{
+            [PUserContext logOut];
             currentUserContext = nil;
         });
         

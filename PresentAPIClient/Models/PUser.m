@@ -572,11 +572,8 @@ static PUser *_currentUser;
         
         NSMutableArray *demandedUsers = [NSMutableArray arrayWithCapacity:results.count];
         for (PDemandResult *result in results) {
-            PUser *user = result.demand.targetUserResult.user;
+            PUser *user = result.demand.targetUser;
             [demandedUsers addObject:user];
-            
-            
-            [[PUser currentUser] addSubjectiveRelationships:result.subjectiveObjectMeta forObject:user];
         }
         
         [_demandedUsers addObjectsFromArray:demandedUsers];
@@ -601,10 +598,8 @@ static PUser *_currentUser;
         
         NSMutableArray *demandingUsers = [NSMutableArray arrayWithCapacity:results.count];
         for (PDemandResult *result in results) {
-            PUser *user = result.demand.sourceUserResult.user;
+            PUser *user = result.demand.sourceUser;
             [demandingUsers addObject:user];
-            
-            [[PUser currentUser] addSubjectiveRelationships:result.subjectiveObjectMeta forObject:user];
         }
         
         [_demandingUsers addObjectsFromArray:demandingUsers];

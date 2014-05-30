@@ -172,7 +172,6 @@ static NSString *const PVideoAPIURLString = @"https://api.present.tv/v1/";
 }
 
 - (void(^)(NSURLResponse *, id, NSError *))multipartBlockWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
-    // !!!: These look weird, but they work and are shorter than storing the blocks in variables
     return ^(NSURLResponse *response, NSDictionary *data, NSError *error) {
         if (!error) {
             [self successBlockWithCompletion:success](nil, data);
