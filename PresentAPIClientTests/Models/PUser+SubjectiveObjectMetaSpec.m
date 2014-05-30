@@ -109,9 +109,6 @@ describe(@"PUser+SubjectiveObjectMeta", ^{
             
             [[theValue(activityMock.type) should] equal:theValue(PActivityTypeNewVideoByFriend)];
             
-            PUser *user = [PUser currentUser];
-            NSLog(@"%@", user);
-            
             // The current user should not follow the source user, nor should the
             // source user follow the current user
             [[theValue([PUser currentUser].friendships.to(sourceUserMock)) should] beNo];
