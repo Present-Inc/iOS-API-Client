@@ -62,27 +62,6 @@
     return relationships;
 }
 
-- (NSArray*)objects {
-    NSMutableArray *objects = [NSMutableArray array];
-    for (id result in self.results) {
-        // TODO: Get the object stored in the class's !subjectiveObjectMeta && isSubclassOf:[PObject class] property
-        unsigned int numberOfProperties, i;
-        objc_property_t *properties = class_copyPropertyList([result class], &numberOfProperties);
-        for (i = 0; i < numberOfProperties; i++) {
-            objc_property_t property = properties[i];
-            
-            const char *propertyName = property_getName(property);
-            const char *propertyType = property_getAttributes(property);
-            
-            NSLog(@"%s is a %s", propertyName, propertyType);
-        }
-        
-        free(properties);
-    }
-    
-    return objects;
-}
-
 @end
 
 @implementation PResourceResponse

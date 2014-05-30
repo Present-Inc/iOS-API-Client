@@ -33,14 +33,6 @@ typedef NS_ENUM(NSInteger, PResponseStatus) {
  */
 - (NSArray*)relationships;
 
-/**
- *  Returns an array of each PObject within each
- *  PResult in results
- *
- *  @return An array of PObject's
- */
-- (NSArray*)objects;
-
 @end
 
 @interface PResourceResponse : PResponse
