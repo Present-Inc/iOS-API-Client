@@ -78,4 +78,9 @@
     return nil;
 }
 
+- (NSURLSessionDataTask*)getVideosWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
+    NSLog(@"%s is not yet implemented", __PRETTY_FUNCTION__);
+    return nil;
+}
+
 @end
