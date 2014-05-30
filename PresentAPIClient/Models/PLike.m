@@ -51,23 +51,22 @@
 + (instancetype)likeForVideo:(PVideo *)video {
     PLike *like = [PLike object];
     
-    like.userResult = [[PUserResult alloc] init];
-    like.userResult.user = [PUser currentUser];
+    like.sourceUserResult = [[PUserResult alloc] init];
+    like.sourceUserResult.user = [PUser currentUser];
     
-    like.videoResult = [[PVideoResult alloc] init];
-    like.videoResult.video = video;
-    like.videoResult.subjectiveObjectMeta.like = [PRelation relationForward:YES backward:NO];
-    like.videoResult.subjectiveObjectMeta.view = [PUser currentUser].views.get(video);
+    like.targetVideoResult = [[PVideoResult alloc] init];
+    like.targetVideoResult.video = video;
+    like.targetVideoResult.subjectiveObjectMeta.like = [PRelation relationForward:YES backward:NO];
     
     return like;
 }
 
-- (PUser*)user {
-    return self.userResult.user;
+- (PUser*)sourceUser {
+    return self.sourceUserResult.user;
 }
 
-- (PVideo*)video {
-    return self.videoResult.video;
+- (PVideo*)targetVideo {
+    return self.targetVideoResult.video;
 }
 
 @end
@@ -135,13 +134,13 @@
 }
 
 - (NSURLSessionDataTask*)createWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
-    return [PLike createLikeForVideo:self.video
+    return [PLike createLikeForVideo:self.targetVideo
                              success:success
                              failure:failure];
 }
 
 - (NSURLSessionDataTask*)deleteWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
-    return [PLike deleteLikeForVideo:self.video
+    return [PLike deleteLikeForVideo:self.targetVideo
                              success:success
                              failure:failure];
 }

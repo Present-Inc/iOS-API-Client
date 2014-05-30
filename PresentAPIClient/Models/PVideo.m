@@ -7,14 +7,18 @@
 //
 
 #import "PVideo.h"
+
 #import "PLocation.h"
 #import "PLike.h"
 #import "PRelationship.h"
 #import "PView.h"
 #import "PResult.h"
-#import "PUser.h"
+#import "PUser+SubjectiveObjectMeta.h"
 #import "PComment.h"
 #import "PPlace.h"
+
+#import "PExternalServices.h"
+#import "PSocialData.h"
 
 #import "PSocialManager.h"
 
@@ -314,13 +318,9 @@ static NSString *mediaSegmentKey    = @"media_segment";
 }
 
 - (void)createView {
-    if (![PUser currentUser].views.to(self)) {
-        [PView createViewForVideo:self
-                          success:nil
-                          failure:nil];
-        
-        [PUser currentUser].views.setForward(self, YES);
-    }
+    [PView createViewForVideo:self
+                      success:nil
+                      failure:nil];
 }
 
 /**
@@ -667,7 +667,7 @@ static NSString *mediaSegmentKey    = @"media_segment";
         
         NSMutableArray *users = [NSMutableArray arrayWithCapacity:results.count];
         for (PLikeResult *result in results) {
-            PUser *user = result.like.user;
+            PUser *user = result.like.sourceUser;
             [users addObject:user];
             
             [[PUser currentUser] addSubjectiveRelationships:result.subjectiveObjectMeta forObject:user];
@@ -697,9 +697,9 @@ static NSString *mediaSegmentKey    = @"media_segment";
         for (PCommentResult *result in results) {
             PComment *comment = result.comment;
             
-            comment.targetVideo = [[PVideoResult alloc] init];
-            comment.targetVideo.video = self;
-            comment.targetVideo.subjectiveObjectMeta.like = [PUser currentUser].likes.get(self);
+            comment.targetVideoResult = [[PVideoResult alloc] init];
+            comment.targetVideoResult.video = self;
+            comment.targetVideoResult.subjectiveObjectMeta.like = [PUser currentUser].likes.get(self);
             
             [comments addObject:comment];
         }

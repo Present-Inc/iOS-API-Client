@@ -12,7 +12,7 @@
 #import "PUserContext.h"
 #import "PResult.h"
 #import "PResponse.h"
-#import "PUser.h"
+#import "PUser+SubjectiveObjectMeta.h"
 
 static NSString *const PVideoAPIURLString = @"https://api.present.tv/v1/";
 

@@ -8,9 +8,9 @@
 
 #import "PVideoSessionManager.h"
 
-#import <FBKVOController.h>
-
 #import "PAPIManager.h"
+#import <PFileManager.h>
+#import <Reachability.h>
 
 #import "PVideo.h"
 #import "PVideoSession.h"
@@ -166,7 +166,6 @@ static NSString *SavedSessionDataPath = @"PSessionData";
  *  Checks sessions to start/resume the upload process
  */
 - (void)resumeSessions {
-    FunctionLog();
     @synchronized(self) {
         if (self.sessions.count > 0) {
             if (self.currentSession.isFinished || (!self.currentSession.video.isLive && self.currentSession.segments.count == 0) || !self.currentSession.video) {
@@ -191,7 +190,7 @@ static NSString *SavedSessionDataPath = @"PSessionData";
 }
 
 - (void)pauseSessions {
-    FunctionLog();
+    NSLog(@"%s is not yet implemented", __PRETTY_FUNCTION__);
 }
 
 - (void)pauseManager {
@@ -302,7 +301,7 @@ static NSString *SavedSessionDataPath = @"PSessionData";
     [self checkPendingSessions];
 }
 
-- (void)videoSessionDidSkipSegment:(PVideoSegment*)segment {
+- (void)videoSessionDidDeleteSegment:(PVideoSegment *)segment {
     NSLog(@"Segment did not exist!");
     [self checkPendingSessions];
 }
@@ -315,24 +314,13 @@ static NSString *SavedSessionDataPath = @"PSessionData";
     NSLog(@"Session did complete upload of sequence %li", (long)mediaSequence);
     [self saveSessions];
     
-    [[Mixpanel sharedInstance] track:@"Successful Video Segment Upload" properties:@{
-        @"Media Sequence": @(mediaSequence),
-        @"Session": [MTLJSONAdapter JSONDictionaryFromModel:session]
-    }];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:PNetworkClientDidFinishPostingFile object:session];
 }
 
 - (void)videoSessionDidFailUpload:(PVideoSession*)session mediaSequence:(NSInteger)mediaSequence withError:(NSError*)error {
     NSLog(@"Session did fail upload of sequence %li", (long)mediaSequence);
-    ErrorLog(error);
     
     [self checkPendingSessions];
-    
-    [[Mixpanel sharedInstance] track:@"Failed Video Segment Upload" properties:@{
-        @"Media Sequence": @(mediaSequence),
-        @"Session": [MTLJSONAdapter JSONDictionaryFromModel:session],
-    }];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:PNetworkClientDidFailWithError object:error];
 }
@@ -343,14 +331,6 @@ static NSString *SavedSessionDataPath = @"PSessionData";
     
     if ([self.currentSession isEqual:session]) {
         _currentSession = nil;
-    }
-    
-    if (session.isCreated && !session.state.isDeleted) {
-        [[Mixpanel sharedInstance] track:@"Video Create" properties:@{
-            @"Start Time": session.video.startTime,
-            @"End Time": session.video.endTime,
-            @"Video ID": session.video._id
-        }];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:PNetworkClientDidEndNotification object:nil];

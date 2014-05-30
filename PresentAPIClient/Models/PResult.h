@@ -11,6 +11,7 @@
 
 #import "PSubjectiveObjectMeta.h"
 
+@class PObject;
 @class PActivity;
 @class PComment;
 @class PDemand;
@@ -25,6 +26,9 @@
 
 @interface PResult : MTLModel <MTLJSONSerializing>
 @property (strong, nonatomic) PSubjectiveObjectMeta *subjectiveObjectMeta;
+
+- (id)object;
+
 @end
 
 @interface PActivityResult : PResult

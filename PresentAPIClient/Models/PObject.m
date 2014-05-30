@@ -10,7 +10,11 @@
 
 #import "NSDate+ISO8601.h"
 
-static NSString *ServerDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+@interface PObject ()
+
+@property (strong, nonatomic) NSString *_id;
+
+@end
 
 @implementation PObject
 

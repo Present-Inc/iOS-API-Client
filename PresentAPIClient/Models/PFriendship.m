@@ -7,9 +7,10 @@
 //
 
 #import "PFriendship.h"
-#import "PUser.h"
 
+#import "PUser.h"
 #import "PResult.h"
+#import "PRelationship.h"
 
 @implementation PFriendship
 

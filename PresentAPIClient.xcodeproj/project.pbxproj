@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		5505006B2A5D437D8200B3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CB1A9496D64AF6A039BD2E /* libPods.a */; };
 		7C1A033A1937760200491E02 /* PVideoSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A03391937760200491E02 /* PVideoSessionManager.m */; };
+		7C1A033C19377AE700491E02 /* PlaygroundSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A033B19377AE700491E02 /* PlaygroundSpec.m */; };
+		7C1A033F19377CC800491E02 /* PUser+SubjectiveObjectMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A033E19377CC800491E02 /* PUser+SubjectiveObjectMeta.m */; };
+		7C1A03481937BBD700491E02 /* PUser+SubjectiveObjectMetaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A03461937BBD700491E02 /* PUser+SubjectiveObjectMetaSpec.m */; };
+		7C1A034A1937BC1600491E02 /* PObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A03491937BC1600491E02 /* PObjectSpec.m */; };
+		7C1A034C1937DF6C00491E02 /* PUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034B1937DF6B00491E02 /* PUserSpec.m */; };
+		7C1A034E1937E02500491E02 /* PUserContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034D1937E02500491E02 /* PUserContextSpec.m */; };
+		7C33ED871938128100C99DA7 /* PObject+NetworkingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */; };
 		7CC36BCE193520DB00C63F11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC36BCD193520DB00C63F11 /* Foundation.framework */; };
 		7CC36BD8193520DB00C63F11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36BD6193520DB00C63F11 /* InfoPlist.strings */; };
 		7CC36BDA193520DB00C63F11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36BD9193520DB00C63F11 /* main.m */; };
@@ -56,7 +63,6 @@
 		7CF425C519366BFF008C1F74 /* PSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF425BF19366BFF008C1F74 /* PSocialManager.m */; };
 		7CF425C619366BFF008C1F74 /* PSocialManager+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF425C119366BFF008C1F74 /* PSocialManager+Internal.m */; };
 		7CF425C719366BFF008C1F74 /* PTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF425C319366BFF008C1F74 /* PTwitterManager.m */; };
-		7CF425CC19366D39008C1F74 /* PObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF425CB19366D39008C1F74 /* PObjectSpec.m */; };
 		7CF425D119368800008C1F74 /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF425D019368800008C1F74 /* NSDate+ISO8601.m */; };
 		7CF425D319368850008C1F74 /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF425D219368850008C1F74 /* NSDate+ISO8601.m */; };
 		8ECACF03EA604E968C60F015 /* libPods-PresentAPIClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7F0B3B28C149A299876C53 /* libPods-PresentAPIClientTests.a */; };
@@ -78,6 +84,14 @@
 		44CB1A9496D64AF6A039BD2E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1A03381937760200491E02 /* PVideoSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PVideoSessionManager.h; path = Controllers/PVideoSessionManager.h; sourceTree = "<group>"; };
 		7C1A03391937760200491E02 /* PVideoSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PVideoSessionManager.m; path = Controllers/PVideoSessionManager.m; sourceTree = "<group>"; };
+		7C1A033B19377AE700491E02 /* PlaygroundSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaygroundSpec.m; sourceTree = "<group>"; };
+		7C1A033D19377CC800491E02 /* PUser+SubjectiveObjectMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PUser+SubjectiveObjectMeta.h"; path = "Models/PUser+SubjectiveObjectMeta.h"; sourceTree = "<group>"; };
+		7C1A033E19377CC800491E02 /* PUser+SubjectiveObjectMeta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PUser+SubjectiveObjectMeta.m"; path = "Models/PUser+SubjectiveObjectMeta.m"; sourceTree = "<group>"; };
+		7C1A03461937BBD700491E02 /* PUser+SubjectiveObjectMetaSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PUser+SubjectiveObjectMetaSpec.m"; path = "Models/PUser+SubjectiveObjectMetaSpec.m"; sourceTree = "<group>"; };
+		7C1A03491937BC1600491E02 /* PObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PObjectSpec.m; path = Models/PObjectSpec.m; sourceTree = "<group>"; };
+		7C1A034B1937DF6B00491E02 /* PUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserSpec.m; path = Models/PUserSpec.m; sourceTree = "<group>"; };
+		7C1A034D1937E02500491E02 /* PUserContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserContextSpec.m; path = Models/PUserContextSpec.m; sourceTree = "<group>"; };
+		7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PObject+NetworkingSpec.m"; path = "Models/PObject+NetworkingSpec.m"; sourceTree = "<group>"; };
 		7CC36BCA193520DB00C63F11 /* PresentAPIClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentAPIClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36BCD193520DB00C63F11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7CC36BCF193520DB00C63F11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,7 +188,6 @@
 		7CF425C119366BFF008C1F74 /* PSocialManager+Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PSocialManager+Internal.m"; path = "Controllers/PSocialManager+Internal.m"; sourceTree = "<group>"; };
 		7CF425C219366BFF008C1F74 /* PTwitterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTwitterManager.h; path = Controllers/PTwitterManager.h; sourceTree = "<group>"; };
 		7CF425C319366BFF008C1F74 /* PTwitterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTwitterManager.m; path = Controllers/PTwitterManager.m; sourceTree = "<group>"; };
-		7CF425CB19366D39008C1F74 /* PObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PObjectSpec.m; path = Models/PObjectSpec.m; sourceTree = "<group>"; };
 		7CF425CF19368800008C1F74 /* NSDate+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ISO8601.h"; path = "Models/NSDate+ISO8601.h"; sourceTree = "<group>"; };
 		7CF425D019368800008C1F74 /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ISO8601.m"; path = "Models/NSDate+ISO8601.m"; sourceTree = "<group>"; };
 		7CF425D219368850008C1F74 /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ISO8601.m"; path = "Models/NSDate+ISO8601.m"; sourceTree = "<group>"; };
@@ -271,6 +284,7 @@
 				7CF425C819366CEF008C1F74 /* Model Tests */,
 				7CF425CD19367FB9008C1F74 /* Controller Tests */,
 				7CC36BED193520DB00C63F11 /* Supporting Files */,
+				7C1A033B19377AE700491E02 /* PlaygroundSpec.m */,
 			);
 			path = PresentAPIClientTests;
 			sourceTree = "<group>";
@@ -520,6 +534,8 @@
 			children = (
 				7CCCE5B519352496006F3EFA /* PUser.h */,
 				7CCCE5B619352496006F3EFA /* PUser.m */,
+				7C1A033D19377CC800491E02 /* PUser+SubjectiveObjectMeta.h */,
+				7C1A033E19377CC800491E02 /* PUser+SubjectiveObjectMeta.m */,
 			);
 			name = PUser;
 			sourceTree = "<group>";
@@ -631,8 +647,12 @@
 		7CF425C819366CEF008C1F74 /* Model Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7CF425CB19366D39008C1F74 /* PObjectSpec.m */,
+				7C1A03461937BBD700491E02 /* PUser+SubjectiveObjectMetaSpec.m */,
 				7CF425D219368850008C1F74 /* NSDate+ISO8601.m */,
+				7C1A03491937BC1600491E02 /* PObjectSpec.m */,
+				7C1A034B1937DF6B00491E02 /* PUserSpec.m */,
+				7C1A034D1937E02500491E02 /* PUserContextSpec.m */,
+				7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */,
 			);
 			name = "Model Tests";
 			sourceTree = "<group>";
@@ -844,6 +864,7 @@
 				7CCCE5F119352496006F3EFA /* PVideo.m in Sources */,
 				7CCCE5DD19352496006F3EFA /* PPlaylistMeta.m in Sources */,
 				7CCCE5D119352496006F3EFA /* PLocation.m in Sources */,
+				7C1A033F19377CC800491E02 /* PUser+SubjectiveObjectMeta.m in Sources */,
 				7CCCE6231935263B006F3EFA /* PAppDelegate.m in Sources */,
 				7CCCE5CB19352496006F3EFA /* PExternalServices.m in Sources */,
 				7CCCE5EB19352496006F3EFA /* PSubjectiveObjectMeta.m in Sources */,
@@ -864,9 +885,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF425CC19366D39008C1F74 /* PObjectSpec.m in Sources */,
+				7C33ED871938128100C99DA7 /* PObject+NetworkingSpec.m in Sources */,
 				7CF425D319368850008C1F74 /* NSDate+ISO8601.m in Sources */,
 				7CCCE63219353B18006F3EFA /* PAPIManagerSpec.m in Sources */,
+				7C1A034E1937E02500491E02 /* PUserContextSpec.m in Sources */,
+				7C1A034C1937DF6C00491E02 /* PUserSpec.m in Sources */,
+				7C1A034A1937BC1600491E02 /* PObjectSpec.m in Sources */,
+				7C1A033C19377AE700491E02 /* PlaygroundSpec.m in Sources */,
+				7C1A03481937BBD700491E02 /* PUser+SubjectiveObjectMetaSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

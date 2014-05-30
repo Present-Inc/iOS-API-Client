@@ -16,6 +16,5 @@
 @property (strong, nonatomic) PRelation *like;
 @property (strong, nonatomic) PRelation *demand;
 @property (strong, nonatomic) PRelation *friendship;
-@property (strong, nonatomic) PRelation *view;
 
 @end

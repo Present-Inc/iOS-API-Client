@@ -9,13 +9,15 @@
 #import "PObject+Subclass.h"
 #import "PObject+Networking.h"
 
-#import "PRelationship.h"
 #import "PFBOpenGraphProtocol.h"
-#import "PExternalServices.h"
 
+@class PRelationship;
+@class PExternalServices;
 @class PUser;
 @class PUserContext;
 @class PLocation;
+@class PFacebookData;
+@class PTwitterData;
 
 typedef void (^PUserBlock) (PUser *user, NSError *error);
 
@@ -68,7 +70,6 @@ typedef void (^PUserBlock) (PUser *user, NSError *error);
 @property (strong, nonatomic) PRelationship *friendships;
 @property (strong, nonatomic) PRelationship *demands;
 @property (strong, nonatomic) PRelationship *likes;
-@property (strong, nonatomic) PRelationship *views;
 
 @property (nonatomic) NSInteger videoCount;
 @property (nonatomic) NSInteger likeCount;
@@ -90,11 +91,6 @@ typedef void (^PUserBlock) (PUser *user, NSError *error);
 - (void)toggleFriendship;
 - (void)toggleDemand;
 
-@end
-
-@class PSubjectiveObjectMeta;
-@interface PUser (SubjectiveObjectMeta)
-- (void)addSubjectiveRelationships:(PSubjectiveObjectMeta*)objectMeta forObject:(PObject*)object;
 @end
 
 @interface PUser (ResourceMethods)
@@ -132,8 +128,6 @@ typedef void (^PUserBlock) (PUser *user, NSError *error);
 @interface PUser (Social) <PFBOpenGraphProtocol>
 - (void)demandOnFacebook;
 @end
-
-#import "PSocialData.h"
 
 @interface PUser (ExternalServices)
 

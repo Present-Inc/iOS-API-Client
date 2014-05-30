@@ -16,13 +16,13 @@
 
 @interface PLike : PObject <PObjectSubclassing>
 
-@property (strong, nonatomic) PUserResult *userResult;
-@property (strong, nonatomic) PVideoResult *videoResult;
+@property (strong, nonatomic) PUserResult *sourceUserResult;
+@property (strong, nonatomic) PVideoResult *targetVideoResult;
 
 + (instancetype)likeForVideo:(PVideo*)video;
 
-- (PUser*)user;
-- (PVideo*)video;
+- (PUser*)sourceUser;
+- (PVideo*)targetVideo;
 
 @end
 

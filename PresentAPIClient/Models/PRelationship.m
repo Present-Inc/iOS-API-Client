@@ -8,6 +8,8 @@
 
 #import "PRelationship.h"
 
+#import "PRelation.h"
+
 @implementation PRelationship
 
 - (id)init {
@@ -65,6 +67,12 @@
         }else {
             relation.backward = value;
         }
+    };
+}
+
+- (void (^) ())clear {
+    return ^{
+        [self.dictionary removeAllObjects];
     };
 }
 

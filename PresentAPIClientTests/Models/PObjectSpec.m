@@ -2,7 +2,7 @@
 //  PObjectSpec.m
 //  PresentAPIClient
 //
-//  Created by Justin Makaila on 5/28/14.
+//  Created by Justin Makaila on 5/29/14.
 //  Copyright 2014 Present, Inc. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ describe(@"PObject", ^{
         [[theValue(object.isNew) should] beYes];
     });
     
-    it (@"can indicate if two objects are equal via client ID", ^{
+    it (@"can indicate if two objects are equal via clientId", ^{
         PObject *objectOne = [[PObject alloc] init];
         objectOne.clientId = @"123";
         

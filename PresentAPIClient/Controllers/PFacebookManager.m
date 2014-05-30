@@ -10,6 +10,9 @@
 
 #import <Social/Social.h>
 
+#import "PExternalServices.h"
+#import "PSocialData.h"
+
 @interface PFacebookManager () {
     NSArray *facebookAccounts;
 }

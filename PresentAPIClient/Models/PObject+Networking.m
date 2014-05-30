@@ -9,6 +9,7 @@
 
 #import "PObject+Networking.h"
 #import "PResult.h"
+#import "PUser+SubjectiveObjectMeta.h"
 
 static NSString *CreateRoute  = @"create";
 static NSString *ShowRoute    = @"show";
@@ -56,12 +57,18 @@ static NSString *DestroyRoute = @"destroy";
     return ^(NSArray *results, NSInteger nextCursor) {
         NSMutableArray *collection = [NSMutableArray array];
         for (NSDictionary *objectJSON in results) {
-            MTLModel *model = [MTLJSONAdapter modelOfClass:[[self class] resourceResultClass] fromJSONDictionary:objectJSON error:nil];
+            PResult *model = [MTLJSONAdapter modelOfClass:[[self class] resourceResultClass] fromJSONDictionary:objectJSON error:nil];
             [collection addObject:model];
         }
         
+        NSMutableArray *objects = [NSMutableArray arrayWithCapacity:collection.count];
+        for (PResult *result in collection) {
+            [objects addObject:result.object];
+            [[PUser currentUser] addSubjectiveRelationshipsForResult:result];
+        }
+        
         if (completion) {
-            completion(collection, nextCursor);
+            completion(objects, nextCursor);
         }
     };
 }

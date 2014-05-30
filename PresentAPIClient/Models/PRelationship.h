@@ -9,7 +9,8 @@
 #import "PDictionary.h"
 
 #import "PObjectProtocol.h"
-#import "PRelation.h"
+
+@class PRelation;
 
 @interface PRelationship : PDictionary
 
@@ -36,5 +37,7 @@
  *  Sets the backward relationship store in key object.objectId
  */
 @property (readonly, copy, nonatomic) void (^setBackward) (id<PObjectProtocol> object, BOOL value);
+
+@property (readonly, copy, nonatomic) void (^clear) ();
 
 @end

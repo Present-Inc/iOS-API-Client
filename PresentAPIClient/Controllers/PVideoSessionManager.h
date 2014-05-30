@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Present, Inc. All rights reserved.
 //
 
+#import <AFNetworking.h>
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
+
+#import "PAPIManager.h"
 
 @class PVideoSession;
 @class PVideo;

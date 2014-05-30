@@ -10,6 +10,7 @@
 
 #import "PUser.h"
 #import "PResult.h"
+#import "PRelationship.h"
 
 @implementation PDemand
 

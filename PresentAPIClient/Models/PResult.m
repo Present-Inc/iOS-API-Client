@@ -8,6 +8,7 @@
 
 #import "PResult.h"
 
+#import "PObject.h"
 #import "PActivity.h"
 #import "PComment.h"
 #import "PDemand.h"
@@ -46,6 +47,32 @@
     }
     
     return _subjectiveObjectMeta;
+}
+
+/**
+ *  Returns the object associated with the result. This is provided for dynamic access
+ *  to all possible results from the cluster class.
+ *
+ *  @return The PObject stored in the result. If no object is found, returns nil
+ */
+- (PObject*)object {
+    if ([self isMemberOfClass:[PActivityResult class]]) {
+        return ((PActivityResult*)self).activity;
+    }else if ([self isMemberOfClass:[PCommentResult class]]) {
+        return ((PCommentResult*)self).comment;
+    }else if ([self isMemberOfClass:[PDemandResult class]]) {
+        return ((PDemandResult*)self).demand;
+    }else if ([self isMemberOfClass:[PFriendshipResult class]]) {
+        return ((PFriendshipResult*)self).friendship;
+    }else if ([self isMemberOfClass:[PLikeResult class]]) {
+        return ((PLikeResult*)self).like;
+    }else if ([self isMemberOfClass:[PUserResult class]]) {
+        return ((PUserResult*)self).user;
+    }else if ([self isMemberOfClass:[PVideoResult class]]) {
+        return ((PVideoResult*)self).video;
+    }
+    
+    return nil;
 }
 
 @end

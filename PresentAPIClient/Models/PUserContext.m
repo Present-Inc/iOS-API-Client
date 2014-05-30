@@ -48,10 +48,18 @@ static NSData *_deviceToken = nil;
 
 + (PUserContext*)currentContext {
     if (!_currentContext) {
-        _currentContext = [PFileManager loadObjectFromLocation:CurrentUserContextArchivePath inSearchPathDirectory:NSLibraryDirectory];
+        PUserContext *currentContext = [PFileManager loadObjectFromLocation:CurrentUserContextArchivePath inSearchPathDirectory:NSLibraryDirectory];
+        [self setCurrentContext:currentContext];
     }
     
     return _currentContext;
+}
+
++ (void)setCurrentContext:(PUserContext*)currentContext {
+    _currentContext = currentContext;
+    [_currentContext saveToDisk];
+    
+    [[PAPIManager sharedManager] setUserContext:currentContext];
 }
 
 + (NSDictionary*)pushCredentials {
@@ -101,10 +109,7 @@ static NSData *_deviceToken = nil;
 + (NSURLSessionDataTask*)authenticateWithCredentials:(NSDictionary *)credentials success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
     PObjectResultBlock successBlock = ^(PUserContextResult *result) {
         PUserContext *userContext = result.userContext;
-        [[PAPIManager sharedManager] setUserContext:userContext];
-        
-        _currentContext = userContext;
-        [userContext saveToDisk];
+        [self setCurrentContext:userContext];
         
         if (success) {
             success(userContext);

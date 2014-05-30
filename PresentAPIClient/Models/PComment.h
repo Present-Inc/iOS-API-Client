@@ -18,12 +18,15 @@
 
 @property (strong, nonatomic) NSString *body;
 
-@property (strong, nonatomic) PUserResult *sourceUser;
-@property (strong, nonatomic) PVideoResult *targetVideo;
+@property (strong, nonatomic) PUserResult *sourceUserResult;
+@property (strong, nonatomic) PVideoResult *targetVideoResult;
 
 @property (strong, nonatomic) NSDate *createdAtPlaceholder;
 
 + (instancetype)commentWithBody:(NSString*)commentBody onVideo:(PVideo*)video;
+
+- (PUser*)sourceUser;
+- (PVideo*)targetVideo;
 
 @end
 

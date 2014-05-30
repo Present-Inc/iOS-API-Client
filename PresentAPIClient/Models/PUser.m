@@ -7,6 +7,7 @@
 //
 
 #import "PUser.h"
+#import "PUser+SubjectiveObjectMeta.h"
 
 #import "PRelationship.h"
 #import "PFriendship.h"
@@ -15,10 +16,9 @@
 #import "PDemand.h"
 #import "PLocation.h"
 #import "PVideo.h"
-
 #import "PResult.h"
-
 #import "PExternalServices.h"
+#import "PSocialData.h"
 
 @interface PUser ()
 
@@ -287,14 +287,6 @@ static PUser *_currentUser;
     return _demands;
 }
 
-- (PRelationship*)views {
-    if (!_views) {
-        _views = [[PRelationship alloc] init];
-    }
-    
-    return _views;
-}
-
 #pragma mark Properties
 
 - (NSString*)facebookId {
@@ -315,37 +307,6 @@ static PUser *_currentUser;
     PUser *user = (PUser*)model;
     if (user.externalServices) {
         [self.externalServices mergeValuesForKeysFromModel:user.externalServices];
-    }
-}
-
-@end
-
-@implementation PUser (SubjectiveObjectMeta)
-
-- (void)addSubjectiveRelationshipsForResult:(PResult*)result {
-    // TODO: Find a way to parse PResult's with the object
-}
-
-- (void)addSubjectiveRelationships:(PSubjectiveObjectMeta *)objectMeta forObject:(PObject*)object {
-    PRelation *friendship = objectMeta.friendship;
-    PRelation *demand = objectMeta.demand;
-    PRelation *view = objectMeta.view;
-    PRelation *like = objectMeta.like;
-    
-    if (friendship) {
-        [PUser currentUser].friendships.set(object, friendship);
-    }
-    
-    if (demand) {
-        [PUser currentUser].demands.set(object, demand);
-    }
-    
-    if (view) {
-        [PUser currentUser].views.set(object, view);
-    }
-    
-    if (like) {
-        [PUser currentUser].likes.set(object, like);
     }
 }
 
@@ -666,15 +627,16 @@ static PUser *_currentUser;
             [_likedVideos removeAllObjects];
         }
         
+        // !!!: This needs to be revised...
         NSMutableArray *likedVideos = [NSMutableArray arrayWithCapacity:results.count];
         for (PLikeResult *result in results) {
-            result.like.userResult = [[PUserResult alloc] init];
-            result.like.userResult.user = self;
+            result.like.sourceUserResult = [[PUserResult alloc] init];
+            result.like.sourceUserResult.user = self;
             
-            PVideo *video = result.like.video;
+            PVideo *video = result.like.targetVideo;
             [likedVideos addObject:video];
             
-            [[PUser currentUser] addSubjectiveRelationships:result.like.videoResult.subjectiveObjectMeta forObject:video];
+            [[PUser currentUser] addSubjectiveRelationships:result.like.targetVideoResult.subjectiveObjectMeta forObject:video];
         }
         
         [_likedVideos addObjectsFromArray:likedVideos];

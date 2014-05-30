@@ -11,6 +11,7 @@
 #import "PMention.h"
 #import "PVideo.h"
 #import "PResult.h"
+#import "PRelationship.h"
 
 @implementation PComment
 
@@ -64,12 +65,12 @@
 
 + (instancetype)commentWithBody:(NSString *)commentBody onVideo:(PVideo *)video {
     PComment *comment = [PComment object];
-    comment.targetVideo = [[PVideoResult alloc] init];
-    comment.targetVideo.video = video;
-    comment.targetVideo.subjectiveObjectMeta.like = [PUser currentUser].likes.get(video);
+    comment.targetVideoResult = [[PVideoResult alloc] init];
+    comment.targetVideoResult.video = video;
+    comment.targetVideoResult.subjectiveObjectMeta.like = [PUser currentUser].likes.get(video);
     
-    comment.sourceUser = [[PUserResult alloc] init];
-    comment.sourceUser.user = [PUser currentUser];
+    comment.sourceUserResult = [[PUserResult alloc] init];
+    comment.sourceUserResult.user = [PUser currentUser];
     
     comment.createdAtPlaceholder = [NSDate date];
     
@@ -87,27 +88,27 @@
 }
 
 - (void)mergeTargetVideoFromModel:(PComment*)model {
-    PVideoResult *targetVideo = model.targetVideo;
-    if ([targetVideo isKindOfClass:[NSString class]]) {
+    PVideoResult *targetVideoResult = model.targetVideoResult;
+    if ([targetVideoResult isKindOfClass:[NSString class]]) {
         return;
-    }else if (targetVideo != nil) {
-        self.targetVideo = targetVideo;
+    }else if (targetVideoResult != nil) {
+        self.targetVideoResult = targetVideoResult;
     }
 }
 
 - (void)mergeSourceUserFromModel:(PComment*)model {
-    PUserResult *sourceUser = model.sourceUser;
-    if ([sourceUser isKindOfClass:[NSString class]]) {
+    PUserResult *sourceUserResult = model.sourceUserResult;
+    if ([sourceUserResult isKindOfClass:[NSString class]]) {
         return;
-    }else if (sourceUser != nil) {
-        self.sourceUser = sourceUser;
+    }else if (sourceUserResult != nil) {
+        self.sourceUserResult = sourceUserResult;
     }
 }
 
 - (BOOL)isEqual:(id)object {
     if ([super isEqual:object]) {
         PComment *comment = (PComment*)object;
-        return ([comment.body isEqualToString:self.body] && [comment.sourceUser.user isEqual:self.sourceUser.user] && ([comment.createdAtPlaceholder isEqualToDate:self.createdAtPlaceholder] ||[ comment.creationDate isEqualToDate:self.creationDate]));
+        return ([comment.body isEqualToString:self.body] && [comment.sourceUser isEqual:self.sourceUser] && ([comment.createdAtPlaceholder isEqualToDate:self.createdAtPlaceholder] ||[ comment.creationDate isEqualToDate:self.creationDate]));
     }else {
         return NO;
     }
@@ -118,6 +119,14 @@
     NSDate *compareDate = (!comment.creationDate) ? comment.createdAtPlaceholder : comment.creationDate;
     
     return [creationDate compare:compareDate];
+}
+
+- (PUser*)sourceUser {
+    return self.sourceUserResult.user;
+}
+
+- (PVideo*)targetVideo {
+    return self.targetVideoResult.video;
 }
 
 @end
@@ -164,7 +173,7 @@
 
 - (NSURLSessionDataTask*)createWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
     NSDictionary *createParameters = @{
-        @"video_id": self.targetVideo.video._id,
+        @"video_id": self.targetVideo._id,
         @"body": self.body
     };
     

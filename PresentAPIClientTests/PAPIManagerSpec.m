@@ -65,14 +65,15 @@ describe(@"PAPIManager", ^{
     });
     
     it (@"can GET a collection from the API", ^{
-        __block NSMutableArray *fetchedResults = nil;
+        __block NSMutableArray *fetchedResults = [NSMutableArray array];
         __block NSInteger currentCursor = 0;
         __block NSError *responseError = nil;
         
         NSURLSessionDataTask *task = [[PAPIManager sharedManager] getCollectionAtResource:@"videos/list_brand_new_videos"
                                                                            withParameters:@{}
                                                                                   success:^(NSArray *results, NSInteger nextCursor) {
-                                                                                      fetchedResults = [NSMutableArray arrayWithArray:results];
+                                                                                      [fetchedResults addObjectsFromArray:results];
+                                                                                      
                                                                                       currentCursor = nextCursor;
                                                                                   }
                                                                                   failure:^(NSError *error) {
