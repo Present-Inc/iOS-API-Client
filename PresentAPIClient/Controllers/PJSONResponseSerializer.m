@@ -7,6 +7,7 @@
 //
 
 #import "PJSONResponseSerializer.h"
+#import "PResponse.h"
 
 @implementation PJSONResponseSerializer
 

@@ -7,7 +7,6 @@
 //
 
 #import <AFNetworking/AFURLResponseSerialization.h>
-#import "PResponse.h"
 
 static NSString *const PErrorResponseKey = @"PResponseErrorObject";
 

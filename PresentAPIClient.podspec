@@ -17,5 +17,4 @@ Pod::Spec.new do |s|
   s.dependency 'PFileManager', '~> 0.0.1'
   s.dependency 'Mantle', '~> 1.3.1'
   s.dependency 'Objective-Shorthand', '~> 1.0'
-  s.dependency 'Kiwi/XCTest', '~> 2.2.3'
 end
