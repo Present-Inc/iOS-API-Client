@@ -258,9 +258,16 @@ static NSString *mediaSegmentKey    = @"media_segment";
         return nil;
     }
     
-    NSRange mostRecentCommentsRange = (_commentsArray.count > 0 && _commentsArray.count < kMostRecentCommentsToDisplay) ? NSMakeRange(0, _commentsArray.count) : NSMakeRange(_commentsArray.count - kMostRecentCommentsToDisplay, kMostRecentCommentsToDisplay);
+    NSInteger start = 0;
+    NSInteger length = 0;
+    if (_commentsArray.count > 0 && _commentsArray.count < kMostRecentCommentsToDisplay) {
+        length = _commentsArray.count;
+    }else {
+        start = _commentsArray.count - kMostRecentCommentsToDisplay;
+        length = kMostRecentCommentsToDisplay;
+    }
     
-    return [[_commentsArray subarrayWithRange:mostRecentCommentsRange] sortedArray];
+    return [[_commentsArray subarrayWithRange:NSMakeRange(start, length)] sortedArray];
 }
 
 - (PUser*)creatorUser {
