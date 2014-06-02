@@ -657,8 +657,8 @@ static PUser *_currentUser;
         NSMutableArray *videos = [NSMutableArray arrayWithCapacity:results.count];
         for (PVideoResult *result in results) {
             PVideo *video = result.video;
-            video.creatorUser = [[PUserResult alloc] init];
-            video.creatorUser.user = self;
+            video.creatorUserResult = [[PUserResult alloc] init];
+            video.creatorUserResult.user = self;
             
             [videos addObject:video];
             

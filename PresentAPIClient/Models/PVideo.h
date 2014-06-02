@@ -18,17 +18,11 @@
 @class PUserResult;
 @class PPlaceResult;
 
-//#import "PUser.h"
-//#import "PLocation.h"
-//#import "PComment.h"
-//#import "PPlace.h"
-//#import "PResult.h"
-
 @class MKMapView;
 
 @interface PVideo : PObject <PObjectSubclassing>
 
-@property (strong, nonatomic) PUserResult *creatorUser;
+@property (strong, nonatomic) PUserResult *creatorUserResult;
 
 @property (strong, nonatomic) NSString *title;
 
@@ -75,6 +69,7 @@
 - (void)deleteComment:(PComment*)comment;
 
 - (NSArray*)mostRecentComments;
+- (PUser*)creatorUser;
 
 - (CLLocationCoordinate2D)coordinate;
 

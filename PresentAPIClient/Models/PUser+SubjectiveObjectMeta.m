@@ -117,7 +117,7 @@
         /**
          *  Handle the creator user result
          */
-        [self addSubjectiveRelationshipsForResult:video.creatorUser];
+        [self addSubjectiveRelationshipsForResult:video.creatorUserResult];
     }else {
         return;
     }

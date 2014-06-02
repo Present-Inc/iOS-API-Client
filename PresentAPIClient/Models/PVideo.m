@@ -164,10 +164,10 @@ static NSString *mediaSegmentKey    = @"media_segment";
 - (void)mergeCreatorUserFromModel:(MTLModel*)model {
     PVideo *video = (PVideo*)model;
     
-    if (!video.creatorUser) {
+    if (!video.creatorUserResult) {
         return;
-    }else if (video.creatorUser && !self.creatorUser) {
-        self.creatorUser = video.creatorUser;
+    }else if (video.creatorUserResult && !self.creatorUserResult) {
+        self.creatorUserResult = video.creatorUserResult;
     }
 }
 
@@ -232,7 +232,7 @@ static NSString *mediaSegmentKey    = @"media_segment";
 }
 
 - (NSString*)shareUrlString {
-    return [NSString stringWithFormat:@"http://www.present.tv/%@/p/%@", self.creatorUser.user.username, self._id];
+    return [NSString stringWithFormat:@"http://www.present.tv/%@/p/%@", self.creatorUserResult.user.username, self._id];
 }
 
 - (NSURL*)watchURL {
@@ -258,9 +258,20 @@ static NSString *mediaSegmentKey    = @"media_segment";
         return nil;
     }
     
-    NSRange mostRecentCommentsRange = (_commentsArray.count > 0 && _commentsArray.count < kMostRecentCommentsToDisplay) ? NSMakeRange(0, _commentsArray.count) : NSMakeRange(_commentsArray.count - kMostRecentCommentsToDisplay, kMostRecentCommentsToDisplay);
+    NSInteger start = 0;
+    NSInteger length = 0;
+    if (_commentsArray.count > 0 && _commentsArray.count < kMostRecentCommentsToDisplay) {
+        length = _commentsArray.count;
+    }else {
+        start = _commentsArray.count - kMostRecentCommentsToDisplay;
+        length = kMostRecentCommentsToDisplay;
+    }
     
-    return [[_commentsArray subarrayWithRange:mostRecentCommentsRange] sortedArray];
+    return [[_commentsArray subarrayWithRange:NSMakeRange(start, length)] sortedArray];
+}
+
+- (PUser*)creatorUser {
+    return self.creatorUserResult.user;
 }
 
 - (CLLocationCoordinate2D)coordinate {
