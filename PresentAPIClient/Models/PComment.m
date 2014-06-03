@@ -31,7 +31,7 @@
     }];
 }
 
-+ (NSValueTransformer*)sourceUserJSONTransformer {
++ (NSValueTransformer*)sourceUserResultJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id (NSDictionary *dictionary) {
         if ([dictionary isKindOfClass:[NSDictionary class]]) {
             return [MTLJSONAdapter modelOfClass:PUserResult.class fromJSONDictionary:dictionary error:nil];
@@ -47,7 +47,7 @@
     }];
 }
 
-+ (NSValueTransformer*)targetVideoJSONTransformer {
++ (NSValueTransformer*)targetVideoResultJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSDictionary *dictionary) {
         if ([dictionary isKindOfClass:[NSDictionary class]]) {
             return [MTLJSONAdapter modelOfClass:PVideoResult.class fromJSONDictionary:dictionary error:nil];

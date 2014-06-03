@@ -84,7 +84,7 @@ static NSString *mediaSegmentKey    = @"media_segment";
     return [[super encodingBehaviorsByPropertyKey] mtl_dictionaryByRemovingEntriesWithKeys:setToRemove];
 }
 
-+ (NSValueTransformer*)creatorUserJSONTransformer {
++ (NSValueTransformer*)creatorUserResultJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSDictionary *dictionary) {
         if ([dictionary isKindOfClass:[NSDictionary class]]) {
             return [MTLJSONAdapter modelOfClass:PUserResult.class fromJSONDictionary:dictionary error:nil];
