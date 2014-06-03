@@ -46,8 +46,8 @@
 - (PObjectResultBlock)createSuccess;
 - (PFailureBlock)createFailure;
 
-- (void(^)(id))successfulUpload;
-- (void(^)(NSError *))failedUpload;
+- (void (^) (id))successfulUpload;
+- (void (^) (NSError *))failedUpload;
 
 @end
 
