@@ -87,6 +87,14 @@
     }];
 }
 
+- (PUser*)sourceUser {
+    return self.sourceUserResult.user;
+}
+
+- (PUser*)targetUser {
+    return self.targetUserResult.user;
+}
+
 @end
 
 @implementation PActivity (ResourceMethods)
