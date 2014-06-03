@@ -65,12 +65,11 @@
 
 + (instancetype)commentWithBody:(NSString *)commentBody onVideo:(PVideo *)video {
     PComment *comment = [PComment object];
-    comment.targetVideoResult = [[PVideoResult alloc] init];
-    comment.targetVideoResult.video = video;
+    
+    comment.targetVideoResult = [[PVideoResult alloc] initWithVideo:video];
     comment.targetVideoResult.subjectiveObjectMeta.like = [PUser currentUser].likes.get(video);
     
-    comment.sourceUserResult = [[PUserResult alloc] init];
-    comment.sourceUserResult.user = [PUser currentUser];
+    comment.sourceUserResult = [[PUserResult alloc] initWithUser:[PUser currentUser]];
     
     comment.createdAtPlaceholder = [NSDate date];
     

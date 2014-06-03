@@ -58,7 +58,8 @@
 @interface PUserResult : PResult
 @property (strong, nonatomic) PUser *user;
 
-- (id)initWithUser:(PUser*)user subjectiveObjectMeta:(PSubjectiveObjectMeta*)objectMeta;
+- (instancetype)initWithUser:(PUser*)user;
+- (instancetype)initWithUser:(PUser*)user subjectiveObjectMeta:(PSubjectiveObjectMeta*)objectMeta;
 
 @end
 
@@ -69,6 +70,10 @@
 @interface PVideoResult : PResult
 @property (strong, nonatomic) PVideo *video;
 @property (strong, nonatomic) PPlaylistSession *playlistSession;
+
+- (instancetype)initWithVideo:(PVideo*)video;
+- (instancetype)initWithVideo:(PVideo*)video subjectiveObjectMeta:(PSubjectiveObjectMeta*)objectMeta;
+
 @end
 
 @interface PViewResult : PResult

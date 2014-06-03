@@ -177,7 +177,11 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PUser.class];
 }
 
-- (id)initWithUser:(PUser *)user subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+- (instancetype)initWithUser:(PUser *)user {
+    return [self initWithUser:user subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithUser:(PUser *)user subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
     self = [super init];
     if (self) {
         _user = user;
@@ -218,6 +222,20 @@
 
 + (NSValueTransformer*)playlistSessionJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PPlaylistSession.class];
+}
+
+- (instancetype)initWithVideo:(PVideo *)video {
+    return [self initWithVideo:video subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithVideo:(PVideo *)video subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super init];
+    if (self) {
+        _video = video;
+        self.subjectiveObjectMeta = objectMeta;
+    }
+    
+    return self;
 }
 
 @end
