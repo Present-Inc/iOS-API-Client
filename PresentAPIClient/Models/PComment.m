@@ -25,8 +25,8 @@
 
 + (NSDictionary*)JSONKeyPathsByPropertyKey {
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:@{
-        @"creator": @"sourceUser",
-        @"video": @"targetVideo",
+        @"sourceUserResult": @"sourceUser",
+        @"targetVideoResult": @"targetVideo",
         @"createdAtPlaceholder": NSNull.null
     }];
 }

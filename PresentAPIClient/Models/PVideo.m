@@ -55,7 +55,7 @@ static NSString *mediaSegmentKey    = @"media_segment";
 
 + (NSDictionary*)JSONKeyPathsByPropertyKey {
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:@{
-        @"creatorUser": @"creatorUser",
+        @"creatorUserResult": @"creatorUser",
         @"startTime": @"creationTimeRange.startDate",
         @"endTime": @"creationTimeRange.endDate",
         @"commentCount": @"comments.count",
