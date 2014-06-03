@@ -16,6 +16,7 @@
 #import "PVideoSessionState.h"
 #import "PVideoSessionMeta.h"
 #import "PResult.h"
+#import "PResponse.h"
 
 #import <NSObject+JSON.h>
 
@@ -111,7 +112,6 @@ static NSInteger MaxRetryCount      = 3;
 }
 
 + (instancetype)sessionWithVideo:(PVideo *)video successBlock:(PObjectResultBlock)successBlock failureBlock:(PFailureBlock)failureBlock {
-    NSLog(@"Creating a new session");
     PVideoSession *newSession = [[PVideoSession alloc] init];
     
     newSession.videoResult = [[PVideoResult alloc] init];
@@ -270,11 +270,6 @@ static NSInteger MaxRetryCount      = 3;
 }
 
 - (BOOL)sessionFinished {
-//    PLog(@"Finished uploads: %@\nplaylistSession.meta.isFinished? %@\nDeleted? %@",
-//         self.finishedUploads ? @"YES" : @"NO",
-//         self.playlistSession.meta.isFinished ? @"YES" : @"NO",
-//         self.state.isDeleted ? @"YES" : @"NO");
-    
     return (self.finishedUploads && self.playlistSession.meta.isFinished) || (self.state.isDeleted);
 }
 
