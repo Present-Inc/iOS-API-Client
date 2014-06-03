@@ -25,7 +25,7 @@
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:@{
         @"type": @"type",
         @"unread": @"isUnread",
-        @"fromUserResult": @"sourceUser",
+        @"sourceUserResult": @"sourceUser",
         @"targetUserResult": @"targetUser",
         @"videoResult": @"video",
         @"commentResult": @"comment",
@@ -47,7 +47,7 @@
     }];
 }
 
-+ (NSValueTransformer*)fromUserResultJSONTransformer {
++ (NSValueTransformer*)sourceUserResultJSONTransformer {
     return [MTLValueTransformer transformerWithBlock:^id(NSDictionary *dictionary) {
         if ([dictionary isKindOfClass:[NSDictionary class]]) {
             return [MTLJSONAdapter modelOfClass:PUserResult.class fromJSONDictionary:dictionary error:nil];
