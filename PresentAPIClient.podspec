@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.dependency 'STTwitter', '~> 0.1.0'
   s.dependency 'PFileManager', '~> 0.0.1'
   s.dependency 'Mantle', '~> 1.3.1'
-  s.dependency 'Objective-Shorthand', :head
+  s.dependency 'Objective-Shorthand'
 end
