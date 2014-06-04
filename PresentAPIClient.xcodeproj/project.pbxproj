@@ -16,6 +16,7 @@
 		7C1A034C1937DF6C00491E02 /* PUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034B1937DF6B00491E02 /* PUserSpec.m */; };
 		7C1A034E1937E02500491E02 /* PUserContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034D1937E02500491E02 /* PUserContextSpec.m */; };
 		7C33ED871938128100C99DA7 /* PObject+NetworkingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */; };
+		7C71768A193FC2F50073E191 /* PActivity+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C717689193FC2F50073E191 /* PActivity+ResourceMethods.m */; };
 		7CC36BCE193520DB00C63F11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC36BCD193520DB00C63F11 /* Foundation.framework */; };
 		7CC36BD8193520DB00C63F11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36BD6193520DB00C63F11 /* InfoPlist.strings */; };
 		7CC36BDA193520DB00C63F11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36BD9193520DB00C63F11 /* main.m */; };
@@ -92,6 +93,8 @@
 		7C1A034B1937DF6B00491E02 /* PUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserSpec.m; path = Models/PUserSpec.m; sourceTree = "<group>"; };
 		7C1A034D1937E02500491E02 /* PUserContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserContextSpec.m; path = Models/PUserContextSpec.m; sourceTree = "<group>"; };
 		7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PObject+NetworkingSpec.m"; path = "Models/PObject+NetworkingSpec.m"; sourceTree = "<group>"; };
+		7C717688193FC2F50073E191 /* PActivity+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PActivity+ResourceMethods.h"; path = "Models/PActivity+ResourceMethods.h"; sourceTree = "<group>"; };
+		7C717689193FC2F50073E191 /* PActivity+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PActivity+ResourceMethods.m"; path = "Models/PActivity+ResourceMethods.m"; sourceTree = "<group>"; };
 		7CC36BCA193520DB00C63F11 /* PresentAPIClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentAPIClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36BCD193520DB00C63F11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7CC36BCF193520DB00C63F11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -361,6 +364,8 @@
 			children = (
 				7CCCE58719352496006F3EFA /* PActivity.h */,
 				7CCCE58819352496006F3EFA /* PActivity.m */,
+				7C717688193FC2F50073E191 /* PActivity+ResourceMethods.h */,
+				7C717689193FC2F50073E191 /* PActivity+ResourceMethods.m */,
 			);
 			name = PActivity;
 			sourceTree = "<group>";
@@ -853,6 +858,7 @@
 				7CCCE62F19352E17006F3EFA /* PObject+Networking.m in Sources */,
 				7CF425C719366BFF008C1F74 /* PTwitterManager.m in Sources */,
 				7C1A033A1937760200491E02 /* PVideoSessionManager.m in Sources */,
+				7C71768A193FC2F50073E191 /* PActivity+ResourceMethods.m in Sources */,
 				7CCCE5E319352496006F3EFA /* PRelationship.m in Sources */,
 				7CCCE5C519352496006F3EFA /* PActivity.m in Sources */,
 				7CCCE5CD19352496006F3EFA /* PFriendship.m in Sources */,

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Present, Inc. All rights reserved.
 //
 
-#import "PObject+Networking.h"
 #import "PObject+Subclass.h"
 
 @class PUser;
@@ -45,14 +44,6 @@ typedef NS_ENUM(NSInteger, PActivityType) {
 - (PUser*)targetUser;
 
 - (PVideo*)video;
-
 - (PComment*)comment;
-
-@end
-
-@interface PActivity (ResourceMethods)
-
-+ (NSURLSessionDataTask*)getActivityForCurrentUserWithCursor:(NSInteger)cursor success:(PCollectionResultsBlock)success failure:(PFailureBlock)failure;
-+ (NSURLSessionDataTask*)saveActivityCollection:(NSArray*)collection success:(PCollectionResultsBlock)success failure:(PFailureBlock)failure;
 
 @end
