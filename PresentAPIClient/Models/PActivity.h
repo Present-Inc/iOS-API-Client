@@ -44,6 +44,10 @@ typedef NS_ENUM(NSInteger, PActivityType) {
 - (PUser*)sourceUser;
 - (PUser*)targetUser;
 
+- (PVideo*)video;
+
+- (PComment*)comment;
+
 @end
 
 @interface PActivity (ResourceMethods)

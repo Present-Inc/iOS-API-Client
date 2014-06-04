@@ -95,6 +95,14 @@
     return self.targetUserResult.user;
 }
 
+- (PVideo*)video {
+    return self.videoResult.video;
+}
+
+- (PComment*)comment {
+    return self.commentResult.comment;
+}
+
 @end
 
 @implementation PActivity (ResourceMethods)
