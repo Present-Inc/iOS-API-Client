@@ -7,7 +7,6 @@
 //
 
 #import "PObject+Subclass.h"
-#import "PObject+Networking.h"
 
 @class PUser;
 @class PVideo;
@@ -27,17 +26,5 @@
 
 - (PUser*)sourceUser;
 - (PVideo*)targetVideo;
-
-@end
-
-@interface PComment (ResourceMethods)
-
-+ (NSURLSessionDataTask*)getCommentWithId:(NSString*)id success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-+ (NSURLSessionDataTask*)getCommentsForVideo:(PVideo*)video success:(PCollectionResultsBlock)success failure:(PFailureBlock)failure;
-
-+ (NSURLSessionDataTask*)deleteComment:(PComment*)comment success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-
-- (NSURLSessionDataTask*)createWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-- (NSURLSessionDataTask*)updateWithBody:(NSString*)newBody success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
 
 @end
