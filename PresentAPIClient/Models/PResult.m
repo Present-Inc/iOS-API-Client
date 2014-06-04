@@ -41,6 +41,15 @@
     }];
 }
 
+- (instancetype)initWithSubjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super init];
+    if (self) {
+        _subjectiveObjectMeta = objectMeta;
+    }
+    
+    return self;
+}
+
 - (PSubjectiveObjectMeta*)subjectiveObjectMeta {
     if (!_subjectiveObjectMeta) {
         _subjectiveObjectMeta = [[PSubjectiveObjectMeta alloc] init];
@@ -93,6 +102,19 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PActivity.class];
 }
 
+- (instancetype)initWithActivity:(PActivity *)activity {
+    return [self initWithActivity:activity subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithActivity:(PActivity *)activity subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _activity = activity;
+    }
+    
+    return self;
+}
+
 @end
 
 @implementation PCommentResult
@@ -105,6 +127,19 @@
 
 + (NSValueTransformer*)commentJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PComment.class];
+}
+
+- (instancetype)initWithComment:(PComment *)comment {
+    return [self initWithComment:comment subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithComment:(PComment *)comment subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _comment = comment;
+    }
+    
+    return self;
 }
 
 @end
@@ -121,6 +156,19 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PDemand.class];
 }
 
+- (instancetype)initWithDemand:(PDemand *)demand {
+    return [self initWithDemand:demand subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithDemand:(PDemand *)demand subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _demand = demand;
+    }
+    
+    return self;
+}
+
 @end
 
 @implementation PFriendshipResult
@@ -133,6 +181,19 @@
 
 + (NSValueTransformer*)friendshipJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PFriendship.class];
+}
+
+- (instancetype)initWithFriendship:(PFriendship *)friendship {
+    return [self initWithFriendship:friendship subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithFriendship:(PFriendship *)friendship subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _friendship = friendship;
+    }
+    
+    return self;
 }
 
 @end
@@ -149,6 +210,19 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PLike.class];
 }
 
+- (instancetype)initWithLike:(PLike *)like {
+    return [self initWithLike:like subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithLike:(PLike *)like subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _like = like;
+    }
+    
+    return self;
+}
+
 @end
 
 @implementation PPlaceResult
@@ -161,6 +235,19 @@
 
 + (NSValueTransformer*)placeJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PPlace.class];
+}
+
+- (instancetype)initWithPlace:(PPlace *)place {
+    return [self initWithPlace:place subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithPlace:(PPlace *)place subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _place = place;
+    }
+    
+    return self;
 }
 
 @end
@@ -182,10 +269,9 @@
 }
 
 - (instancetype)initWithUser:(PUser *)user subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
-    self = [super init];
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
     if (self) {
         _user = user;
-        self.subjectiveObjectMeta = objectMeta;
     }
     
     return self;
@@ -203,6 +289,19 @@
 
 + (NSValueTransformer*)userContextJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PUserContext.class];
+}
+
+- (instancetype)initWithUserContext:(PUserContext *)userContext {
+    return [self initWithUserContext:userContext subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithUserContext:(PUserContext *)userContext subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _userContext = userContext;
+    }
+    
+    return self;
 }
 
 @end
@@ -229,10 +328,9 @@
 }
 
 - (instancetype)initWithVideo:(PVideo *)video subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
-    self = [super init];
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
     if (self) {
         _video = video;
-        self.subjectiveObjectMeta = objectMeta;
     }
     
     return self;
@@ -250,6 +348,19 @@
 
 + (NSValueTransformer*)viewJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PView.class];
+}
+
+- (instancetype)initWithView:(PView *)view {
+    return [self initWithView:view subjectiveObjectMeta:nil];
+}
+
+- (instancetype)initWithView:(PView *)view subjectiveObjectMeta:(PSubjectiveObjectMeta *)objectMeta {
+    self = [super initWithSubjectiveObjectMeta:objectMeta];
+    if (self) {
+        _view = view;
+    }
+    
+    return self;
 }
 
 @end
