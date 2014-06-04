@@ -212,6 +212,9 @@
 + (void)showMFMessageComposeViewControllerWithText:(NSString *)text {
     if ([MFMessageComposeViewController canSendText]) {
         MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+        messageController.navigationBar.tintColor = [UIColor blackColor];
+        messageController.navigationBar.barTintColor = [UIColor whiteColor];
+        
         [messageController setMessageComposeDelegate:self.sharedManager];
         [messageController setBody:text];
         
