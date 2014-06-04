@@ -247,6 +247,9 @@
 + (void)showMFMailComposeViewControllerWithSubjectLine:(NSString*)subject messageBody:(NSString*)messageBody recipients:(NSArray*)recipients {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+        mailController.navigationBar.tintColor = [UIColor blackColor];
+        mailController.navigationBar.barTintColor = [UIColor blackColor];
+        
         [mailController setMailComposeDelegate:self.sharedManager];
         [mailController setSubject:subject];
         [mailController setToRecipients:recipients];
