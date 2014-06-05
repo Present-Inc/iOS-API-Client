@@ -7,7 +7,6 @@
 //
 
 #import "PObject+Subclass.h"
-#import "PObject+Networking.h"
 
 @class PUser;
 @class PUserResult;
@@ -23,17 +22,5 @@
 
 - (PUser*)sourceUser;
 - (PUser*)targetUser;
-
-@end
-
-@interface PDemand (ResourceMethods)
-
-+ (NSURLSessionDataTask*)deleteDemandForUser:(PUser*)user success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-
-+ (NSURLSessionDataTask*)getForwardDemandsForUser:(PUser*)user success:(PCollectionResultsBlock)success failure:(PFailureBlock)failure;
-+ (NSURLSessionDataTask*)getBackwardDemandsForUser:(PUser*)user success:(PCollectionResultsBlock)success failure:(PFailureBlock)failure;
-
-- (NSURLSessionDataTask*)createWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-- (NSURLSessionDataTask*)deleteWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure;
 
 @end
