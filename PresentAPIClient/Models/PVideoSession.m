@@ -12,7 +12,7 @@
 
 #import "PAPIManager.h"
 #import "PVideoSegment.h"
-#import "PVideo.h"
+#import "PVideo+ResourceMethods.h"
 #import "PVideoSessionState.h"
 #import "PVideoSessionMeta.h"
 #import "PResult.h"

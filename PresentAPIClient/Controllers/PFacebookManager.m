@@ -61,11 +61,11 @@ static ACAccount *_currentAccount;
     return !![self currentAccount];
 }
 
-+ (void)linkUser:(PUser *)user success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
++ (void)linkUser:(PUser *)user success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [[self sharedManager] requestAccessToFacebookAccountsWithSuccess:success failure:failure];
 }
 
-+ (void)unlinkUser:(PUser *)user success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
++ (void)unlinkUser:(PUser *)user success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     if ([FBSession activeSession].state == FBSessionStateOpen || [FBSession activeSession].state == FBSessionStateOpenTokenExtended) {
         [[FBSession activeSession] closeAndClearTokenInformation];
     }
@@ -110,7 +110,7 @@ static ACAccount *_currentAccount;
     }
 }
 
-+ (FBSessionStateHandler)sessionCompletionHandlerWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
++ (FBSessionStateHandler)sessionCompletionHandlerWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     return ^(FBSession *session, FBSessionState state, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!error && state == FBSessionStateOpen) {
@@ -169,7 +169,7 @@ static ACAccount *_currentAccount;
                       otherButtonTitles:nil] show];
 }
          
-- (void)requestAccessToFacebookAccountsWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure {
+- (void)requestAccessToFacebookAccountsWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
     
@@ -197,7 +197,7 @@ static ACAccount *_currentAccount;
 
 }
 
-- (void)openFacebookSessionWithLoginUI:(BOOL)loginUI success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
+- (void)openFacebookSessionWithLoginUI:(BOOL)loginUI success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     dispatch_async(dispatch_get_main_queue(), ^{
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
                                            allowLoginUI:loginUI
@@ -209,7 +209,7 @@ static ACAccount *_currentAccount;
     [self loginWithAccount:account success:nil];
 }
 
-- (void)loginWithAccount:(ACAccount*)account success:(PObjectResultBlock)success {
+- (void)loginWithAccount:(ACAccount*)account success:(void (^)(id))success {
     if (![PUser currentUser].externalServices.facebook.accountIdentifier) {
         PFacebookData *facebookData = [PFacebookData facebookDataWithIdentifier:account.identifier
                                                                          userId:[[account valueForKey:@"properties"] valueForKey:@"uid"]

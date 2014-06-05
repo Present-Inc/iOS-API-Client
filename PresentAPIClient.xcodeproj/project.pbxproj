@@ -16,10 +16,14 @@
 		7C1A034C1937DF6C00491E02 /* PUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034B1937DF6B00491E02 /* PUserSpec.m */; };
 		7C1A034E1937E02500491E02 /* PUserContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034D1937E02500491E02 /* PUserContextSpec.m */; };
 		7C33ED871938128100C99DA7 /* PObject+NetworkingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */; };
+		7C39279F193FFE32006A85EE /* PVideo+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C39279E193FFE32006A85EE /* PVideo+ResourceMethods.m */; };
 		7C71768A193FC2F50073E191 /* PActivity+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C717689193FC2F50073E191 /* PActivity+ResourceMethods.m */; };
 		7C71768D193FC5CB0073E191 /* PComment+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C71768C193FC5CB0073E191 /* PComment+ResourceMethods.m */; };
 		7CC0BC37193FEA7F00A1A54E /* PDemand+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0BC36193FEA7F00A1A54E /* PDemand+ResourceMethods.m */; };
 		7CC0BC3A193FEB0900A1A54E /* PFriendship+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0BC39193FEB0900A1A54E /* PFriendship+ResourceMethods.m */; };
+		7CC0BC3D193FF8F700A1A54E /* PLike+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0BC3C193FF8F700A1A54E /* PLike+ResourceMethods.m */; };
+		7CC0BC40193FF98A00A1A54E /* PPlace+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0BC3F193FF98A00A1A54E /* PPlace+ResourceMethods.m */; };
+		7CC0BC43193FFA6300A1A54E /* PUser+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0BC42193FFA6300A1A54E /* PUser+ResourceMethods.m */; };
 		7CC36BCE193520DB00C63F11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC36BCD193520DB00C63F11 /* Foundation.framework */; };
 		7CC36BD8193520DB00C63F11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36BD6193520DB00C63F11 /* InfoPlist.strings */; };
 		7CC36BDA193520DB00C63F11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36BD9193520DB00C63F11 /* main.m */; };
@@ -96,6 +100,8 @@
 		7C1A034B1937DF6B00491E02 /* PUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserSpec.m; path = Models/PUserSpec.m; sourceTree = "<group>"; };
 		7C1A034D1937E02500491E02 /* PUserContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserContextSpec.m; path = Models/PUserContextSpec.m; sourceTree = "<group>"; };
 		7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PObject+NetworkingSpec.m"; path = "Models/PObject+NetworkingSpec.m"; sourceTree = "<group>"; };
+		7C39279D193FFE32006A85EE /* PVideo+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PVideo+ResourceMethods.h"; path = "Models/PVideo+ResourceMethods.h"; sourceTree = "<group>"; };
+		7C39279E193FFE32006A85EE /* PVideo+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PVideo+ResourceMethods.m"; path = "Models/PVideo+ResourceMethods.m"; sourceTree = "<group>"; };
 		7C717688193FC2F50073E191 /* PActivity+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PActivity+ResourceMethods.h"; path = "Models/PActivity+ResourceMethods.h"; sourceTree = "<group>"; };
 		7C717689193FC2F50073E191 /* PActivity+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PActivity+ResourceMethods.m"; path = "Models/PActivity+ResourceMethods.m"; sourceTree = "<group>"; };
 		7C71768B193FC5CB0073E191 /* PComment+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PComment+ResourceMethods.h"; path = "Models/PComment+ResourceMethods.h"; sourceTree = "<group>"; };
@@ -104,6 +110,12 @@
 		7CC0BC36193FEA7F00A1A54E /* PDemand+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PDemand+ResourceMethods.m"; path = "Models/PDemand+ResourceMethods.m"; sourceTree = "<group>"; };
 		7CC0BC38193FEB0900A1A54E /* PFriendship+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PFriendship+ResourceMethods.h"; path = "Models/PFriendship+ResourceMethods.h"; sourceTree = "<group>"; };
 		7CC0BC39193FEB0900A1A54E /* PFriendship+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PFriendship+ResourceMethods.m"; path = "Models/PFriendship+ResourceMethods.m"; sourceTree = "<group>"; };
+		7CC0BC3B193FF8F700A1A54E /* PLike+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PLike+ResourceMethods.h"; path = "Models/PLike+ResourceMethods.h"; sourceTree = "<group>"; };
+		7CC0BC3C193FF8F700A1A54E /* PLike+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PLike+ResourceMethods.m"; path = "Models/PLike+ResourceMethods.m"; sourceTree = "<group>"; };
+		7CC0BC3E193FF98A00A1A54E /* PPlace+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PPlace+ResourceMethods.h"; path = "Models/PPlace+ResourceMethods.h"; sourceTree = "<group>"; };
+		7CC0BC3F193FF98A00A1A54E /* PPlace+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PPlace+ResourceMethods.m"; path = "Models/PPlace+ResourceMethods.m"; sourceTree = "<group>"; };
+		7CC0BC41193FFA6300A1A54E /* PUser+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PUser+ResourceMethods.h"; path = "Models/PUser+ResourceMethods.h"; sourceTree = "<group>"; };
+		7CC0BC42193FFA6300A1A54E /* PUser+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PUser+ResourceMethods.m"; path = "Models/PUser+ResourceMethods.m"; sourceTree = "<group>"; };
 		7CC36BCA193520DB00C63F11 /* PresentAPIClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentAPIClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36BCD193520DB00C63F11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7CC36BCF193520DB00C63F11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -426,6 +438,8 @@
 			children = (
 				7CCCE59319352496006F3EFA /* PLike.h */,
 				7CCCE59419352496006F3EFA /* PLike.m */,
+				7CC0BC3B193FF8F700A1A54E /* PLike+ResourceMethods.h */,
+				7CC0BC3C193FF8F700A1A54E /* PLike+ResourceMethods.m */,
 			);
 			name = PLike;
 			sourceTree = "<group>";
@@ -464,6 +478,8 @@
 			children = (
 				7CCCE59F19352496006F3EFA /* PPlace.h */,
 				7CCCE5A019352496006F3EFA /* PPlace.m */,
+				7CC0BC3E193FF98A00A1A54E /* PPlace+ResourceMethods.h */,
+				7CC0BC3F193FF98A00A1A54E /* PPlace+ResourceMethods.m */,
 			);
 			name = PPlace;
 			sourceTree = "<group>";
@@ -554,6 +570,8 @@
 			children = (
 				7CCCE5B519352496006F3EFA /* PUser.h */,
 				7CCCE5B619352496006F3EFA /* PUser.m */,
+				7CC0BC41193FFA6300A1A54E /* PUser+ResourceMethods.h */,
+				7CC0BC42193FFA6300A1A54E /* PUser+ResourceMethods.m */,
 				7C1A033D19377CC800491E02 /* PUser+SubjectiveObjectMeta.h */,
 				7C1A033E19377CC800491E02 /* PUser+SubjectiveObjectMeta.m */,
 			);
@@ -574,6 +592,8 @@
 			children = (
 				7CCCE5B919352496006F3EFA /* PVideo.h */,
 				7CCCE5BA19352496006F3EFA /* PVideo.m */,
+				7C39279D193FFE32006A85EE /* PVideo+ResourceMethods.h */,
+				7C39279E193FFE32006A85EE /* PVideo+ResourceMethods.m */,
 			);
 			name = PVideo;
 			sourceTree = "<group>";
@@ -860,10 +880,13 @@
 				7CCCE5F719352496006F3EFA /* PVideoSessionMeta.m in Sources */,
 				7CCCE5C719352496006F3EFA /* PComment.m in Sources */,
 				7CCCE5D319352496006F3EFA /* PMention.m in Sources */,
+				7CC0BC40193FF98A00A1A54E /* PPlace+ResourceMethods.m in Sources */,
 				7CCCE5FB19352496006F3EFA /* PView.m in Sources */,
 				7CCCE5E519352496006F3EFA /* PResponse.m in Sources */,
 				7CCCE5E719352496006F3EFA /* PResult.m in Sources */,
+				7C39279F193FFE32006A85EE /* PVideo+ResourceMethods.m in Sources */,
 				7C71768D193FC5CB0073E191 /* PComment+ResourceMethods.m in Sources */,
+				7CC0BC43193FFA6300A1A54E /* PUser+ResourceMethods.m in Sources */,
 				7CCCE62A19352818006F3EFA /* PDictionary.m in Sources */,
 				7CCCE5ED19352496006F3EFA /* PUser.m in Sources */,
 				7CCCE5F319352496006F3EFA /* PVideoSegment.m in Sources */,
@@ -897,6 +920,7 @@
 				7CCCE5F519352496006F3EFA /* PVideoSession.m in Sources */,
 				7CCCE5D919352496006F3EFA /* PPlace.m in Sources */,
 				7CCCE5E119352496006F3EFA /* PRelation.m in Sources */,
+				7CC0BC3D193FF8F700A1A54E /* PLike+ResourceMethods.m in Sources */,
 				7CF425C519366BFF008C1F74 /* PSocialManager.m in Sources */,
 				7CCCE5F919352496006F3EFA /* PVideoSessionState.m in Sources */,
 				7CF425D119368800008C1F74 /* NSDate+ISO8601.m in Sources */,

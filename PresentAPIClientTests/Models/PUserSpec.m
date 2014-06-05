@@ -7,7 +7,9 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import "PUser.h"
+
+#import "PObject+Networking.h"
+#import "PUser+ResourceMethods.h"
 
 
 SPEC_BEGIN(PUserSpec)

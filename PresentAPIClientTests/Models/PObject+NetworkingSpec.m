@@ -10,8 +10,8 @@
 #import "PObject+Networking.h"
 
 #import "PResult.h"
-#import "PVideo.h"
-#import "PUser.h"
+#import "PVideo+ResourceMethods.h"
+#import "PUser+ResourceMethods.h"
 
 
 SPEC_BEGIN(PObject_NetworkingSpec)

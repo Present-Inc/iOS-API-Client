@@ -22,14 +22,14 @@
 
 + (BOOL)isLinkedWithUser:(PUser*)user;
 
-+ (void)linkUser:(PUser*)user success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-+ (void)unlinkUser:(PUser*)user success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
++ (void)linkUser:(PUser*)user success:(void (^)(id))success failure:(void (^)(NSError *))failure;
++ (void)unlinkUser:(PUser*)user success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 + (void)requestPublishPermissionsWithSuccess:(void (^)())success;
 
-+ (FBSessionStateHandler)sessionCompletionHandlerWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure;
++ (FBSessionStateHandler)sessionCompletionHandlerWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
-- (void)requestAccessToFacebookAccountsWithSuccess:(PObjectResultBlock)success failure:(PFailureBlock)failure;
+- (void)requestAccessToFacebookAccountsWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 @end
 
