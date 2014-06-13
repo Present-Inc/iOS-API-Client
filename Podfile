@@ -24,7 +24,7 @@ pod 'STTwitter', '~> 0.1.0'
 # Utilities
 pod 'PFileManager', '~> 0.0.1'
 pod 'Mantle', '~> 1.3.1'
-pod 'Objective-Shorthand'
+pod 'Objective-Shorthand', '~> 1.3'
 
 # Tests
 target :PresentAPIClientTests, :exclusive => true do
