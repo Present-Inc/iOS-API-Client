@@ -43,7 +43,8 @@
         @"newVideoByDemandedUser": @(PActivityTypeNewVideoByDemandedUser),
         @"newVideoByFriend": @(PActivityTypeNewVideoByFriend),
         @"newVideoMention": @(PActivityTypeNewVideoMention),
-        @"newViewer": @(PActivityTypeNewViewer)
+        @"newViewer": @(PActivityTypeNewViewer),
+        @"newVideoReply": @(PActivityTypeNewVideoReply)
     }];
 }
 

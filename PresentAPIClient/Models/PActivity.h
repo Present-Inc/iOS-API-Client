@@ -25,7 +25,8 @@ typedef NS_ENUM(NSInteger, PActivityType) {
     PActivityTypeNewVideoByDemandedUser,
     PActivityTypeNewVideoByFriend,
     PActivityTypeNewVideoMention,
-    PActivityTypeNewViewer
+    PActivityTypeNewViewer,
+    PActivityTypeNewVideoReply
 };
 
 @interface PActivity : PObject <PObjectSubclassing>
