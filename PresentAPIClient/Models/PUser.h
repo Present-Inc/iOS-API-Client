@@ -18,8 +18,6 @@
 @class PFacebookData;
 @class PTwitterData;
 
-typedef void (^PUserBlock) (PUser *user, NSError *error);
-
 @interface PUser : PObject <PObjectSubclassing>
 
 @property (strong, nonatomic) NSString *fullName;
@@ -80,6 +78,8 @@ typedef void (^PUserBlock) (PUser *user, NSError *error);
 @property (nonatomic) BOOL registrationComplete;
 @property (nonatomic, getter = isAdmin) BOOL admin;
 
++ (PUser*)currentUser;
+
 - (BOOL)isAuthenticated;
 - (BOOL)isCurrentUser;
 
@@ -87,13 +87,6 @@ typedef void (^PUserBlock) (PUser *user, NSError *error);
 
 - (void)toggleFriendship;
 - (void)toggleDemand;
-
-@end
-
-@interface PUser (CurrentUser)
-
-+ (PUser*)currentUser;
-+ (void)setCurrentUser:(PUser*)user;
 
 @end
 

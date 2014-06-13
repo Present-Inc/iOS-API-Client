@@ -15,6 +15,8 @@
 		7C1A034A1937BC1600491E02 /* PObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A03491937BC1600491E02 /* PObjectSpec.m */; };
 		7C1A034C1937DF6C00491E02 /* PUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034B1937DF6B00491E02 /* PUserSpec.m */; };
 		7C1A034E1937E02500491E02 /* PUserContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A034D1937E02500491E02 /* PUserContextSpec.m */; };
+		7C1D7A321940D76500BE760E /* PUser+CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D7A311940D76500BE760E /* PUser+CurrentUser.m */; };
+		7C1D7A351940D8E700BE760E /* PView+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D7A341940D8E700BE760E /* PView+ResourceMethods.m */; };
 		7C33ED871938128100C99DA7 /* PObject+NetworkingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */; };
 		7C39279F193FFE32006A85EE /* PVideo+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C39279E193FFE32006A85EE /* PVideo+ResourceMethods.m */; };
 		7C71768A193FC2F50073E191 /* PActivity+ResourceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C717689193FC2F50073E191 /* PActivity+ResourceMethods.m */; };
@@ -99,6 +101,10 @@
 		7C1A03491937BC1600491E02 /* PObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PObjectSpec.m; path = Models/PObjectSpec.m; sourceTree = "<group>"; };
 		7C1A034B1937DF6B00491E02 /* PUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserSpec.m; path = Models/PUserSpec.m; sourceTree = "<group>"; };
 		7C1A034D1937E02500491E02 /* PUserContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUserContextSpec.m; path = Models/PUserContextSpec.m; sourceTree = "<group>"; };
+		7C1D7A301940D76500BE760E /* PUser+CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PUser+CurrentUser.h"; path = "Models/PUser+CurrentUser.h"; sourceTree = "<group>"; };
+		7C1D7A311940D76500BE760E /* PUser+CurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PUser+CurrentUser.m"; path = "Models/PUser+CurrentUser.m"; sourceTree = "<group>"; };
+		7C1D7A331940D8E700BE760E /* PView+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PView+ResourceMethods.h"; path = "Models/PView+ResourceMethods.h"; sourceTree = "<group>"; };
+		7C1D7A341940D8E700BE760E /* PView+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PView+ResourceMethods.m"; path = "Models/PView+ResourceMethods.m"; sourceTree = "<group>"; };
 		7C33ED861938128100C99DA7 /* PObject+NetworkingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PObject+NetworkingSpec.m"; path = "Models/PObject+NetworkingSpec.m"; sourceTree = "<group>"; };
 		7C39279D193FFE32006A85EE /* PVideo+ResourceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PVideo+ResourceMethods.h"; path = "Models/PVideo+ResourceMethods.h"; sourceTree = "<group>"; };
 		7C39279E193FFE32006A85EE /* PVideo+ResourceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PVideo+ResourceMethods.m"; path = "Models/PVideo+ResourceMethods.m"; sourceTree = "<group>"; };
@@ -574,6 +580,8 @@
 				7CC0BC42193FFA6300A1A54E /* PUser+ResourceMethods.m */,
 				7C1A033D19377CC800491E02 /* PUser+SubjectiveObjectMeta.h */,
 				7C1A033E19377CC800491E02 /* PUser+SubjectiveObjectMeta.m */,
+				7C1D7A301940D76500BE760E /* PUser+CurrentUser.h */,
+				7C1D7A311940D76500BE760E /* PUser+CurrentUser.m */,
 			);
 			name = PUser;
 			sourceTree = "<group>";
@@ -639,6 +647,8 @@
 			children = (
 				7CCCE5C319352496006F3EFA /* PView.h */,
 				7CCCE5C419352496006F3EFA /* PView.m */,
+				7C1D7A331940D8E700BE760E /* PView+ResourceMethods.h */,
+				7C1D7A341940D8E700BE760E /* PView+ResourceMethods.m */,
 			);
 			name = PView;
 			sourceTree = "<group>";
@@ -895,6 +905,7 @@
 				7CCCE5D719352496006F3EFA /* PObject+Subclass.m in Sources */,
 				7CC36BDA193520DB00C63F11 /* main.m in Sources */,
 				7CCCE62F19352E17006F3EFA /* PObject+Networking.m in Sources */,
+				7C1D7A321940D76500BE760E /* PUser+CurrentUser.m in Sources */,
 				7CF425C719366BFF008C1F74 /* PTwitterManager.m in Sources */,
 				7CC0BC37193FEA7F00A1A54E /* PDemand+ResourceMethods.m in Sources */,
 				7C1A033A1937760200491E02 /* PVideoSessionManager.m in Sources */,
@@ -914,6 +925,7 @@
 				7CCCE6231935263B006F3EFA /* PAppDelegate.m in Sources */,
 				7CCCE5CB19352496006F3EFA /* PExternalServices.m in Sources */,
 				7CCCE5EB19352496006F3EFA /* PSubjectiveObjectMeta.m in Sources */,
+				7C1D7A351940D8E700BE760E /* PView+ResourceMethods.m in Sources */,
 				7CCCE5CF19352496006F3EFA /* PLike.m in Sources */,
 				7CCCE5DB19352496006F3EFA /* PPlaylistConfig.m in Sources */,
 				7CCCE5E919352496006F3EFA /* PSocialData.m in Sources */,

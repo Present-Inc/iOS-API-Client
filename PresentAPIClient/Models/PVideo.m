@@ -11,7 +11,7 @@
 #import "PLocation.h"
 #import "PLike+ResourceMethods.h"
 #import "PRelationship.h"
-#import "PView.h"
+#import "PView+ResourceMethods.h"
 #import "PResult.h"
 #import "PUser+SubjectiveObjectMeta.h"
 #import "PComment+ResourceMethods.h"

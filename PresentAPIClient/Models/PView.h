@@ -19,10 +19,6 @@
 @property (strong, nonatomic) PUserResult *userResult;
 @property (strong, nonatomic) PVideoResult *videoResult;
 
-+ (void)createViewForVideo:(PVideo*)video success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-
-+ (void)getViewsForUser:(PUser*)user success:(PObjectResultBlock)success failure:(PFailureBlock)failure;
-
 - (BOOL)isEqual:(id)object;
 
 - (PUser*)user;

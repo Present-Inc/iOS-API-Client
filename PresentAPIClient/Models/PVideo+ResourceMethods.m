@@ -11,6 +11,7 @@
 
 #import <objc/runtime.h>
 
+#import "PUser+CurrentUser.h"
 #import "PUser+ResourceMethods.h"
 #import "PComment+ResourceMethods.h"
 #import "PLike+ResourceMethods.h"

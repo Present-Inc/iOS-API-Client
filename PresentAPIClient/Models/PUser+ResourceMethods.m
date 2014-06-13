@@ -8,6 +8,7 @@
 
 #import "PUser+ResourceMethods.h"
 #import "PUser+SubjectiveObjectMeta.h"
+#import "PUser+CurrentUser.h"
 
 #import "PUserContext.h"
 #import "PDemand+ResourceMethods.h"
@@ -62,7 +63,7 @@
     
     PObjectResultBlock successBlock = ^(PUserContext *context) {
         PUser *loggedInUser = context.userResult.user;
-        [PUser setCurrentUser:loggedInUser];
+        [PUser _setCurrentUser:loggedInUser];
         
         if (success) {
             success(loggedInUser);
@@ -106,8 +107,8 @@
 
 + (NSURLSessionDataTask*)requestPasswordResetForEmail:(NSString *)email success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
     NSDictionary *resetPasswordParameters = @{
-                                              @"username": email
-                                              };
+        @"username": email
+    };
     
     return [PUser post:[self requestPasswordResetResource]
         withParameters:resetPasswordParameters
@@ -117,14 +118,14 @@
 
 + (void)logOut {
     [PUserContext logOut];
-    [PUser setCurrentUser:nil];
+    [PUser _setCurrentUser:nil];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 + (NSURLSessionDataTask*)getUserWithUsername:(NSString *)username success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
     NSDictionary *showParameters = @{
-                                     @"username": username
-                                     };
+        @"username": username
+    };
     
     return [PUser getResource:[PUser showResource]
                withParameters:showParameters
@@ -134,8 +135,8 @@
 
 + (NSURLSessionDataTask*)getUserWithId:(NSString *)objectId success:(PObjectResultBlock)success failure:(PFailureBlock)failure {
     NSDictionary *userParameters = @{
-                                     @"user_id": objectId
-                                     };
+        @"user_id": objectId
+    };
     
     return [PUser getResource:[PUser showResource]
                withParameters:userParameters

@@ -8,6 +8,7 @@
 
 #import "PUser.h"
 #import "PUser+SubjectiveObjectMeta.h"
+#import "PUser+CurrentUser.h"
 
 #import "PRelationship.h"
 #import "PFriendship+ResourceMethods.h"
@@ -34,8 +35,6 @@
 - (void)deleteDemand:(PUser*)demandingUser;
 
 @end
-
-static PUser *_currentUser;
 
 @implementation PUser
 
@@ -96,6 +95,10 @@ static PUser *_currentUser;
     return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:PExternalServices.class];
 }
 
++ (PUser*)currentUser {
+    return [self _currentUser];
+}
+
 #pragma mark - Instance methods
 
 - (BOOL)isCurrentUser {
@@ -111,7 +114,8 @@ static PUser *_currentUser;
 }
 
 - (void)toggleFriendship {
-    _currentUser.friendships.to(self) ? [_currentUser removeFriend:self] : [_currentUser addFriend:self];
+    PUser *currentUser = [PUser currentUser];
+    currentUser.friendships.to(self) ? [currentUser removeFriend:self] : [currentUser addFriend:self];
 }
 
 - (void)addFriend:(PUser*)friend {
@@ -159,7 +163,8 @@ static PUser *_currentUser;
 }
 
 - (void)toggleDemand {
-    _currentUser.demands.to(self) ? [_currentUser deleteDemand:self] : [_currentUser addDemand:self];
+    PUser *currentUser = [PUser currentUser];
+    currentUser.demands.to(self) ? [currentUser deleteDemand:self] : [currentUser addDemand:self];
 }
 
 - (void)addDemand:(PUser *)demandedUser {
@@ -296,22 +301,6 @@ static PUser *_currentUser;
     if (user.externalServices) {
         [self.externalServices mergeValuesForKeysFromModel:user.externalServices];
     }
-}
-
-@end
-
-@implementation PUser (CurrentUser)
-
-+ (PUser*)currentUser {
-    if (!_currentUser) {
-        [self setCurrentUser:[PUserContext currentContext].userResult.user];
-    }
-    
-    return _currentUser;
-}
-
-+ (void)setCurrentUser:(PUser*)user {
-    _currentUser = user;
 }
 
 @end
