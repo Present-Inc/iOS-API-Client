@@ -892,16 +892,20 @@ static NSString *mediaSegmentKey    = @"media_segment";
     return (self.isTitleValid) ? [NSString stringWithFormat:@"\"%@\"", self.title] : @"something";
 }
 
+- (NSString*)shareString {
+    return [NSString stringWithFormat:@"What I'm seeing now on Present: %@", self.shareUrlString];
+}
+
 - (NSString*)twitterShareString {
-    return [NSString stringWithFormat:@"Check out %@ I found on Present! %@", self.titleString, self.shareUrl.absoluteString];
+    return [self shareString];
 }
 
 - (NSString*)twitterPostString {
-    return [NSString stringWithFormat:@"I just started sharing %@ live on Present! %@", self.titleString, self.shareUrl.absoluteString];
+    return [self shareString];
 }
 
 - (NSString*)textMessageBody {
-    return [NSString stringWithFormat:@"Hey, you should check out %@ on Present! %@", self.titleString, self.shareUrl.absoluteString];
+    return [self shareString];
 }
 
 - (NSString*)emailSubject {
@@ -909,7 +913,7 @@ static NSString *mediaSegmentKey    = @"media_segment";
 }
 
 - (NSString*)emailBody {
-    return [NSString stringWithFormat:@"I found this on Present and thought you might enjoy it. %@", self.shareUrl.absoluteString];
+    return [self shareString];
 }
 
 @end
