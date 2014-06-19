@@ -170,8 +170,8 @@
 		7CCCE5C419352496006F3EFA /* PView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PView.m; path = Models/PView.m; sourceTree = "<group>"; };
 		7CCCE61B1935263B006F3EFA /* PAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPIManager.h; path = Controllers/PAPIManager.h; sourceTree = "<group>"; };
 		7CCCE61C1935263B006F3EFA /* PAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPIManager.m; path = Controllers/PAPIManager.m; sourceTree = "<group>"; };
-		7CCCE61D1935263B006F3EFA /* PAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAppDelegate.h; path = Controllers/PAppDelegate.h; sourceTree = "<group>"; };
-		7CCCE61E1935263B006F3EFA /* PAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAppDelegate.m; path = Controllers/PAppDelegate.m; sourceTree = "<group>"; };
+		7CCCE61D1935263B006F3EFA /* PAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAppDelegate.h; sourceTree = "<group>"; };
+		7CCCE61E1935263B006F3EFA /* PAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAppDelegate.m; sourceTree = "<group>"; };
 		7CCCE61F1935263B006F3EFA /* PJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJSONResponseSerializer.h; path = Controllers/PJSONResponseSerializer.h; sourceTree = "<group>"; };
 		7CCCE6201935263B006F3EFA /* PJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJSONResponseSerializer.m; path = Controllers/PJSONResponseSerializer.m; sourceTree = "<group>"; };
 		7CCCE62819352818006F3EFA /* PDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDictionary.h; path = Models/PDictionary.h; sourceTree = "<group>"; };
