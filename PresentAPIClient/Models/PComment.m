@@ -86,7 +86,7 @@
     }
 }
 
-- (void)mergeTargetVideoFromModel:(PComment*)model {
+- (void)mergeTargetVideoResultFromModel:(PComment*)model {
     PVideoResult *targetVideoResult = model.targetVideoResult;
     if ([targetVideoResult isKindOfClass:[NSString class]]) {
         return;
@@ -95,7 +95,7 @@
     }
 }
 
-- (void)mergeSourceUserFromModel:(PComment*)model {
+- (void)mergeSourceUserResultFromModel:(PComment*)model {
     PUserResult *sourceUserResult = model.sourceUserResult;
     if ([sourceUserResult isKindOfClass:[NSString class]]) {
         return;
